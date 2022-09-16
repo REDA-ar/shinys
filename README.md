@@ -10,3 +10,11 @@ Generador de datos de alturas para ejercicios de predicción.
 
 - [Código](https://github.com/matiaslopez/msued/tree/main/alturas)
 - [App online](https://msued.shinyapps.io/alturas/)
+
+
+### Frecuencias relativas
+
+Material para la ejercitación de frecuencias relativas personalizado para cada persona que obtiene datos.
+
+- [Código](https://github.com/matiaslopez/msued/tree/main/frecuencias_relativas)
+- [App online](https://msued.shinyapps.io/frecuencias_relativas/)
