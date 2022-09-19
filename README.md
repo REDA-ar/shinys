@@ -10,7 +10,7 @@ Generador de datos de alturas para ejercicios de predicción.
 
 - [Código](https://github.com/matiaslopez/msued/tree/main/alturas)
 - [App online](https://msued.shinyapps.io/alturas/)
-- [Video de clase virtual usando la herramienta](hhttps://drive.google.com/file/d/10eLoIfujMsqw8MuuaZv26GDq65q9tww7/view)
+- [Video de clase virtual usando la herramienta](https://drive.google.com/file/d/10eLoIfujMsqw8MuuaZv26GDq65q9tww7/view)
 
 
 ### Frecuencias relativas
