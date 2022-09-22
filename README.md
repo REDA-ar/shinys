@@ -17,7 +17,7 @@ Generador de datos de alturas para ejercicios de predicción.
 
 #### Práctica 1
 
-Ejercicio de ajuste de datos por distintos métodos: recta constante; recta; cuadrática; polinómio interpolador.
+Ejercicio de ajuste de datos por distintos métodos: recta constante; recta; cuadrática; polinomio interpolador.
 
 - [Código](https://github.com/matiaslopez/msued/tree/main/analisis/practica_1)
 - [App online](https://msued.shinyapps.io/analisis_practica_1/)
