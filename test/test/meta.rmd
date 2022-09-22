@@ -1,0 +1,13 @@
+---
+title: "About"
+output: html_document
+---
+
+### CARD - The Correlated Vulnerability, Threat and Exploit Database
+
+$$Exploitability = 20 \times AccessVector \times AccessComplexity \times Authentication$$
+
+$$f(Impact)=\begin{cases}
+\displaystyle 1, & \text{if Impact = 0}. \\\\
+\displaystyle 1.176, & \text{otherwise}.
+\end{cases}$$
