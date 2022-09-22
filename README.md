@@ -13,6 +13,16 @@ Generador de datos de alturas para ejercicios de predicción.
 - [Video de clase virtual usando la herramienta](https://drive.google.com/file/d/10eLoIfujMsqw8MuuaZv26GDq65q9tww7/view)
 
 
+### Análisis 
+
+#### Práctica 1
+
+Ejercicio de ajuste de datos por distintos métodos: recta constante; recta; cuadrática; polinómio interpolador.
+
+- [Código](https://github.com/matiaslopez/msued/tree/main/analisis/practica_1)
+- [App online](https://msued.shinyapps.io/analisis_practica_1/)
+
+
 ### Frecuencias relativas
 
 Material para la ejercitación de frecuencias relativas personalizado para cada persona que obtiene datos.
