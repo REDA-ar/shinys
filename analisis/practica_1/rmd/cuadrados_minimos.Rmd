@@ -1,0 +1,24 @@
+---
+Title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+#http://rstudio-pubs-static.s3.amazonaws.com/3365_9573f6d661b444499365fe1841ee65d3.html
+```
+
+La función de la recta con pendiente $a_1$ y  ordenada al origen $a_0$ está dada por 
+$$f_{a_0,a_1}(x)=a_0+a_1x$$
+
+
+
+Dados  $(x_1,y_1),\ldots, (x_n,y_n)$ buscamos la recta que *mejor aproxime* al conjunto de datos.  
+
+
+Cuadrados mínimos: 
+$$L(a_0,a_1)=\sum_{i=1}^n \left(y_i-f_{a_0,a_1}(x_i)\right)^2=\sum_{i=1}^n \left(y_i-(a_0+a_1x_i)\right)^2$$
+
+
+Buscamos los valores que minimizan la función $L(a_0,a_1)$

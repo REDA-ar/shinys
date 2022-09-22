@@ -1,0 +1,16 @@
+---
+Title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+#http://rstudio-pubs-static.s3.amazonaws.com/3365_9573f6d661b444499365fe1841ee65d3.html
+```
+
+La función de la recta con pendiente $m$ y  ordenada al origen $b$ está dada por 
+$$f(x)=mx+b$$
+
+Alternativamente,  la  función correspondiente a la recta que pasa por el punto $(x_0,y_0)$ y tiene pendiente es $m$ es
+$$f(x)=m(x-x_0)+y_0$$
