@@ -23,6 +23,12 @@ Ejercicio de ajuste de datos por distintos métodos: recta constante; recta; cua
 - [App online](https://msued.shinyapps.io/analisis_practica_1/)
 
 
+### Especificidad y Sensibilidad
+
+- [Código](https://github.com/matiaslopez/msued/tree/main/especificidad_sensibilidad)
+- [App online](https://msued.shinyapps.io/especificidad_sensibilidad/)
+
+
 ### Frecuencias relativas
 
 Material para la ejercitación de frecuencias relativas personalizado para cada persona que obtiene datos.
