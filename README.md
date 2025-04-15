@@ -2,6 +2,8 @@
 
 En este repositorio se nuclearán distintas herramientas desarrolladas para visualizar conceptos estadístico-matemáticos. En algunas de ellas, los alumnos tienen la posibilidad de acceder a datos personalizados, responder preguntas planteadas y verificar sus respuestas.
 
+Si encontrás algún error o tenés alguna sugerencia, mandanos un mail a equiporeda@gmail.com.
+
 ## Herramientas
 
 ### Alturas
