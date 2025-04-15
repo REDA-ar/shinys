@@ -117,9 +117,9 @@ ui <-fluidPage(
                       h4("Se lanzan dos dados y se resistra el valor de cada uno de ellos.
                              Ingresa tu número de identificación 
                     y la cantidad de datos n de veces que repetís el experimento."),
-                      numericInput("libretadados", "numero de libreta:", min = 1, max = 100000000, value = 24292),
+                      numericInput("libretadados", "número de identificación:", min = 1, max = 100000000, value = 24292),
                       
-                      numericInput("obsdados", "Cantidad de datos (entre 1 y 1000):", min = 1, max = 1000, value = 15),
+                      numericInput("obsdados", "Cantidad de datos (entre 1 y 1000):", min = 1, max = 1000, value = 10),
                       
                       hr(),
                       
@@ -192,9 +192,9 @@ ui <-fluidPage(
                       h4("Se registra el tiempo (en meses) de duración de lámparas producidas por cierta fábrica.
                   Ingresa tu número de identificación
                      y la cantidad n de lámparas cuyo tiempo de duración registrás. "),
-                      numericInput("libretalamparas", "numero de libreta:", min = 1, max = 100000000, value = 24292),
+                      numericInput("libretalamparas", "numero de identificación:", min = 1, max = 100000000, value = 24292),
                       
-                      numericInput("obslamparas", "Cantidad de datos (entre 1 y 1000):", min = 1, max = 1000, value = 15),
+                      numericInput("obslamparas", "Cantidad de datos (entre 1 y 1000):", min = 1, max = 1000, value = 10),
                       
                       hr()
                       
@@ -238,9 +238,9 @@ ui <-fluidPage(
                       
                       h4("Se mide la concentración de monoxido de carbono (ppm) en una dada muestra de gas. 
                        Ingresa tu número de identificación y la cantidad n de mediciones que realizas.  "),
-                      numericInput("libreta", "numero de libreta:", min = 1, max = 100000000, value = 24292),
+                      numericInput("libreta", "numero de identificación:", min = 1, max = 100000000, value = 24292),
                       
-                      numericInput("obs", "Cantidad de datos (entre 1 y 1000):", min = 1, max = 1000, value = 15),
+                      numericInput("obs", "Cantidad de datos (entre 1 y 1000):", min = 1, max = 1000, value = 10),
                       
                       hr()
                       
@@ -299,7 +299,7 @@ server <- function(input,output){
   
   output$downloadData <- downloadHandler(
     filename = function() {
-      paste("datos_",input$ejercicio,"libreta", input$libreta, "n_", input$obs, ".csv", sep = "")
+      paste("datos_mediciones_n_", input$obs, ".csv", sep = "")
     },
     content = function(file) {
       write.csv(salida(), file, row.names = FALSE, col.names = TRUE, sep = "")
@@ -357,7 +357,7 @@ server <- function(input,output){
   
   output$downloadDatadados <- downloadHandler(
     filename = function() {
-      paste("datos_",input$ejercicio,"libreta", input$libretadados, "n_", input$obsdados, ".csv", sep = "")
+      paste("datos_dados_n_", input$obsdados, ".csv", sep = "")
     },
     content = function(file) {
       write.csv(salidadados(), file, row.names = FALSE, col.names = TRUE, sep = "")
@@ -476,7 +476,7 @@ server <- function(input,output){
   
   output$downloadDatalamparas <- downloadHandler(
     filename = function() {
-      paste("datos_",input$ejercicio,"libreta", input$libretalamparas, "n_", input$obslamparas, ".csv", sep = "")
+      paste("datos_lampara_n_", input$obslamparas, ".csv", sep = "")
     },
     content = function(file) {
       write.csv(salidalamparas(), file, row.names = FALSE, col.names = TRUE, sep = "")
