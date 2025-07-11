@@ -27,7 +27,7 @@ Ejercicio de ajuste de datos por distintos métodos: recta constante; recta; cua
 
 ### Especificidad y Sensibilidad
 
-- [Código](https://github.com/matiaslopez/msued/tree/main/especificidad_sensibilidad)
+- [Código](https://github.com/REDA-ar/shinys/blob/main/especificidad_sensibilidad/especificidad_sensibilidad_app.R)
 - [App online](https://msued.shinyapps.io/especificidad_sensibilidad/)
 
 
@@ -35,5 +35,55 @@ Ejercicio de ajuste de datos por distintos métodos: recta constante; recta; cua
 
 Material para la ejercitación de frecuencias relativas personalizado para cada persona que obtiene datos.
 
-- [Código](https://github.com/matiaslopez/msued/tree/main/frecuencias_relativas)
+- [Código](https://github.com/REDA-ar/shinys/blob/main/frecuencias_relativas/frecuencias_relativas_app.R)
 - [App online](https://reda-ar.shinyapps.io/actividades_con_datos_propios/)
+
+### Bolitas
+
+- [Código](https://github.com/REDA-ar/shinys/blob/main/bolitas/app.R)
+- [App online]()
+
+### Densidad normal
+
+- [Código](https://github.com/REDA-ar/shinys/blob/main/Densidad_normal/app.R)
+- [App online](https://reda-ar.shinyapps.io/Densidad_normal/)
+
+### Densidad vs histograma
+
+- [Código](https://github.com/REDA-ar/shinys/blob/main/densidad_vs_histograma/app.R)
+- [App online]()
+
+### Especificidad
+
+- [Código](https://github.com/REDA-ar/shinys/blob/main/Especificidad/app.R)
+- [App online](https://github.com/REDA-ar/shinys/blob/main/Especificidad/app.R)
+
+### Gráfico de potencia
+
+- [Código](https://github.com/REDA-ar/shinys/blob/main/grafico_potencia/test_potencia/app.R)
+- [App online](https://reda-ar.shinyapps.io/test_potencia/)
+
+### La empírica
+
+- [Código](https://github.com/REDA-ar/shinys/blob/main/la_empirica/app.R)
+- [App online](https://reda-ar.shinyapps.io/la_empirica/)
+
+### Lifetimes
+
+- [Código](https://github.com/REDA-ar/shinys/blob/main/Lifetimes/app.R)
+- [App online]()
+
+### Regresión
+
+- [Código](https://github.com/REDA-ar/shinys/blob/main/regresion/app.R)
+- [App online](https://reda-ar.shinyapps.io/shiny_regresion/)
+
+### TCL
+
+- [Código](https://github.com/REDA-ar/shinys/blob/main/TCL/TCL_1/app_TCL.R)
+- [App online](https://reda-ar.shinyapps.io/TCL_1/)
+
+
+
+
+
