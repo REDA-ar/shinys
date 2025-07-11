@@ -1,0 +1,41 @@
+---
+title: ""
+output: html_document
+---
+```{r  echo=FALSE  }
+sigma <- 13
+mu0 <-94 
+mu1 <- 83
+alpha <- 0.05
+corte_z <-round(qnorm(1-alpha),2)
+corte_promedio <- function(n)
+{
+salida <- mu0  +sigma/sqrt(n) *corte_z
+}
+
+```
+
+------
+
+El peso medio de calcio en un cemento estándar es de $94g/kg$. Se quiere saber si la presencia de plomo **afecta**
+el peso medio de calcio en el cemento.
+Supondremos  que las
+mediciones de calcio en  cemento  siguen una distribución normal con desvío
+estándar $\sigma=13g/kg$. 
+
+Tenemos entonces  que $X_i$ son v.a.i.i.d., con distribución normal $X_i\sim \mathcal N(\mu, `r sigma^2`)$ y trabajamos con las siguientes hipótesis nula y alternativa: $$H_0:\mu=`r mu0` \quad\quad\quad H_1: \mu\not=`r mu0`$$
+
+Definimos la región de rechazo (de la hipótesis nula $H_0$) como
+
+$$\mathcal R=\left\{\left|\frac{\overline X_n -`r mu0`} {\sqrt{`r sigma^2`/n}}\right| \,\geq \;z_{\alpha/2} \right\} $$
+o equivalentemente 
+$$\mathcal R=\left\{\overline X_n \leq `r mu0`- z_{\alpha/2} \,\sqrt{`r sigma^2`/n}\right\}\cup \left\{\overline X_n \geq `r mu0`+z_{\alpha/2} \,\sqrt{`r sigma^2`/n}\right\}$$
+donde $z_{\beta}$ representa el cuantil $1-\beta$ de la distribución normal estándar (área $\beta$ a derecha bajo la curva).
+
+Recordemos cómo se calcula la función de potencia. Esta función depende de $\mu$ y es la probabilidad de rechazar $H_0$ asumiendo que $\mu$ es el verdadero parámetro que da origen a las observaciones. Es decir que 
+\begin{eqnarray*}
+&&\hspace{-20pt}\pi(\mu)=\mathbb P_\mu(\mathcal R) = \mathbb P_\mu\left( \left\{\overline X_n \leq `r mu0`- z_{\alpha/2} \,\sqrt{`r sigma^2`/n}\right\}\cup \left\{\overline X_n \geq `r mu0`+z_{\alpha/2} \,\sqrt{`r sigma^2`/n}\right\}\right)=\\
+&&\mathbb P_\mu\left( \frac{\overline X_n -\mu} {\sqrt{`r sigma^2`/n}}\leq \frac{\sqrt{n}(`r mu0`-\mu)}{\sqrt{`r sigma^2`}}- z_{\alpha/2} \,\right)+\mathbb P_\mu\left( \frac{\overline X_n -\mu} {\sqrt{`r sigma^2`/n}}\geq \frac{\sqrt{n}(`r mu0`-\mu)}{\sqrt{`r sigma^2`}}+ z_{\alpha/2} \,\right)=\\
+&&\hbox{pnorm}\left(\frac{\sqrt{n}(`r mu0`-\mu)}{\sqrt{`r sigma^2`}}- z_{\alpha/2} \,\right)+1-\hbox{pnorm}\left(\frac{\sqrt{n}(`r mu0`-\mu)}{\sqrt{`r sigma^2`}}+ z_{\alpha/2} \,\right)
+\end{eqnarray*}
+

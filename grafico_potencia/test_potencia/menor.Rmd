@@ -1,0 +1,41 @@
+---
+title: ""
+output: html_document
+---
+```{r  echo=FALSE  }
+sigma <- 4
+mu0 <- 20
+# mu1 <- 83
+# alpha <- 0.05
+# corte_z <-round(qnorm(1-alpha),2)
+# corte_promedio <- function(n)
+# {
+# salida <- mu0  +sigma/sqrt(n) *corte_z
+# }
+
+```
+
+------
+
+Una asociación de consumidores está preocupada por la cantidad proteínas 
+	contenida en las hamburguesas de la marca Mc. Burguer. 
+	El fabricante afirma que el contenido medio de proteínas  de este tipo de 
+	hamburguesas supera los 
+`r mu0` gr.  La asociación de consumidores quiere saber si tiene motivos para
+	decir que la afirmación del fabricante es falsa. Se sabe que el
+	contenido de grasa de cada hamburguesa de esta marca es una v.a con
+	distribución normal con media $\mu$ y varianza conocida $\sigma^{2}=`r sigma^2`$.
+
+Tenemos entonces  que $X_i$ son v.a.i.i.d., con distribución normal $X_i\sim \mathcal N(\mu, `r sigma^2`)$ y trabajamos con las siguientes hipótesis nula y alternativa: $$H_0:\mu=`r mu0` \quad\quad\quad H_1: \mu<`r mu0`$$
+
+Definimos la región de rechazo (de la hipótesis nula $H_0$) como
+
+$$\mathcal R=\left\{\frac{\overline X_n -`r mu0`} {\sqrt{`r sigma^2`/n}} \,\leq \;-z_{\alpha} \right\} $$
+o equivalentemente 
+$$\mathcal R= \left\{\overline X_n \leq `r mu0`-z_{\alpha} \,\sqrt{`r sigma^2`/n}\right\}$$
+donde $z_{\beta}$ representa el cuantil $1-\beta$ de la distribución normal estándar (área $\beta$ a derecha bajo la curva).
+
+Recordemos cómo se calcula la función de potencia. Esta función depende de $\mu$ y es la probabilidad de rechazar $H_0$ asumiendo que $\mu$ es el verdadero parámetro que da origen a las observaciones. Es decir que 
+$$\hspace{-20pt}\pi(\mu)=\mathbb P_\mu(\mathcal R) = \mathbb P_\mu\left( \overline X_n \leq `r mu0`- z_{\alpha} \,\sqrt{`r sigma^2`/n}\right)=
+\mathbb P_\mu\left( \frac{\overline X_n -\mu} {\sqrt{`r sigma^2`/n}}\leq \frac{\sqrt{n}(`r mu0`-\mu)}{\sqrt{`r sigma^2`}}- z_{\alpha} \,\right)=
+\hbox{pnorm}\left(\frac{\sqrt{n}(`r mu0`-\mu)}{\sqrt{`r sigma^2`}}- z_{\alpha} \,\right)$$

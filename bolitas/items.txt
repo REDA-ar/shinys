@@ -1,0 +1,5 @@
+Calcular la probabilidad de obtener
+a) las dos bolitas del mismo color.
+b) al menos una bolita roja.
+c) una bolita azul y una roja.
+d) una bolita azul o una roja.

@@ -1,0 +1,23 @@
+---
+title: ""
+output: html_document
+---
+```{r  echo=FALSE  }
+
+
+```
+
+------
+
+
+Recordemos que la importancia de la función de potencia se debe a que tanto la probabilidad de error tipo I como la probabilidad de error Tipo II pueden ser expresadas en términos de la función de potencia. Más especificamente, 
+
+* Error tipo I: rechazar $H_0$ cuando es verdadera. 
+En el presente ejemplo, 
+$$\hbox{P(error tipo I):}\quad \mathbb P_{\mu=80} (\mathcal R)=\pi(80)$$
+
+* Error tipo II: NO rechazar $H_0$ cuando es falsa. 
+En el presente ejemplo,
+$$\hbox{P(error tipo II):}\quad \mathbb P_{\mu} (\mathcal R^c)=1-\mathbb P_{\mu} (\mathcal R)=1-\pi(\mu)\;,\quad \mu>80.$$
+
+Idealmente, queremos  que la función de potencia sea chica *en la hipótesis nula* y grande en la alternativa, para que los dos errores sean chicos. Lamentablemente, cuando achicamos un error agrandamos el otro. Esta teoría se encarga de controlar el error tipo I;  para controlar el otro, se necesita eventualmente $n$ más grande... Veamos, en los  gráficos cómo evoluciona la función de potencia al variar el $n$.

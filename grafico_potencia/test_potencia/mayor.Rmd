@@ -1,0 +1,35 @@
+---
+title: ""
+output: html_document
+---
+```{r  echo=FALSE  }
+sigma <- 3
+mu0 <- 80
+# mu1 <- 83
+# alpha <- 0.05
+# corte_z <-round(qnorm(1-alpha),2)
+# corte_promedio <- function(n)
+# {
+# salida <- mu0  +sigma/sqrt(n) *corte_z
+# }
+
+```
+
+------
+
+Los aditivos a base de arsénico en la alimentación de pollos han sido prohibidos por la Unión Europea. Sin embargo, son utilizados en la dieta de aproximadamente el 70% de los 9 mil millones de pollos de engorde producidos anualmente en los Estados Unidos.  Muchas cadenas de restaurantes y supermercados están  trabajando para reducir la cantidad de arsénico en el pollo que venden. Para ello, una cadena planea tomar una muestra aleatoria de cada uno de sus proveedores y medir en los pollos seleccionados la cantidad de arsénico que poseen. La cadena cancelará su relación con un proveedor
+si la muestra proporciona evidencia suficiente de que la media $\mu$   de arsénico en sus pollos  es mayor a 80 ppb (partes por billón).
+
+Tenemos entonces  que $X_i$ son v.a.i.i.d., con distribución normal $X_i\sim \mathcal N(\mu, `r sigma^2`)$ y trabajamos con las siguientes hipótesis nula y alternativa: $$H_0:\mu=`r mu0` \quad\quad\quad H_1: \mu>`r mu0`$$
+
+Definimos la región de rechazo (de la hipótesis nula $H_0$) como
+Definimos la región de rechazo (de la hipótesis nula $H_0$) como
+
+$$\mathcal R=\left\{\frac{\overline X_n -`r mu0`} {\sqrt{`r sigma^2`/n}}\,\geq \;z_{\alpha} \right\} \quad \text{ o equivalentemente } \quad  \mathcal R=\left\{\overline X_n \geq `r mu0`+ z_{\alpha} \,\sqrt{`r sigma^2`/n}\right\}$$
+donde $z_{\alpha}$ representa el cuantil $1-\alpha$ de la distribución normal estándar.
+
+Vamos a graficar la densidad del promedio $\overline X_n$ (que depende del valor real del parámetro $\mu$, y de la cantidad $n$ de datos) y colorear el área debajo de la curva que está sobre la región de rechazo. Esto representa la probabilidad de que el promedio caiga en la región de rechazo, es decir la potencia del test.
+Recordemos cómo se calcula la función de potencia. Esta función depende de $\mu$ y es la probabilidad de rechazar $H_0$ asumiendo que $\mu$ es el verdadero parámetro que da origen a las observaciones. Es decir que 
+$$\hspace{-20pt}\pi(\mu)=\mathbb P_\mu(\mathcal R) = \mathbb P_\mu\left( \overline X_n \geq `r mu0`+ z_{\alpha} \,\sqrt{`r sigma^2`/n}\right)=
+\mathbb P_\mu\left( \frac{\overline X_n -\mu} {\sqrt{`r sigma^2`/n}}\geq \frac{\sqrt{n}(`r mu0`-\mu)}{\sqrt{`r sigma^2`}}+ z_{\alpha} \,\right)=
+1-\hbox{pnorm}\left(\frac{\sqrt{n}(`r mu0`-\mu)}{\sqrt{`r sigma^2`}}+ z_{\alpha} \,\right)$$

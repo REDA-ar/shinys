@@ -1,0 +1,21 @@
+---
+Title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+#http://rstudio-pubs-static.s3.amazonaws.com/3365_9573f6d661b444499365fe1841ee65d3.html
+```
+
+Las funciones constantes  están dadas por 
+$$f_a(x)=a$$
+
+Dados  $(x_1,y_1),\ldots, (x_n,y_n)$ buscamos la constante  que *mejor aproxime* al conjunto de datos.  
+
+
+Cuadrados mínimos: 
+$$L(a)=\sum_{i=1}^n \left(y_i-f_{a}(x_i)\right)^2=\sum_{i=1}^n \left(y_i-a\right)^2$$
+
+Buscamos el valor de $a$ que minimiza la función $L(a)$.

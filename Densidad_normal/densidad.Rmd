@@ -1,0 +1,14 @@
+---
+title: ""
+output: html_document
+---
+```{r  echo=FALSE  }
+
+```
+
+------
+
+La función de densidad de una variable $X$ con distribución normal, de parametros $\mu$ y $\sigma^2$  está dada por 
+$$f_X(x)=\frac{}{\sqrt{2\pi \sigma^2}}\exp^{-\frac{(x-\mu)^2}{2\sigma^2}}.$$
+Utilizamos  $X\sim \mathcal N(\mu,\sigma^2)$ para denotar este hecho. Tenemos además que  que $\mathbb E(X)=\mu$ y $V(X)=\sigma^2$.   
+Te invitamos a ver como cambia el gráfico cuando cambiamos los valores de los parámetros. 

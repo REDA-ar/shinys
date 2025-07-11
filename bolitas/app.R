@@ -1,0 +1,187 @@
+library(shiny)
+
+genero.bolitas <- function(semilla){
+	set.seed(semilla)
+	azules <- sample(2:10,1)
+	#sample(2:6,1,prob=c(1/3,1/4,rep(5/36,3)))
+	blancas <- sample(3:11,1)
+	#sample(3:10,1,prob=c(rep(5/72,6),1/3,1/4))
+	rojas <- sample(4:12,1)
+	#sample(8:15,1,prob=c(rep(5/72,3),1/3,1/4,rep(5/72,3)))
+	Probabilidad <- c(azules,blancas,rojas)
+	Probabilidad
+}
+
+
+prob_a <-function(azules, blancas, rojas) 
+{
+  n_bolsa <- azules+blancas+rojas
+  totales <- n_bolsa*(n_bolsa-1)
+  favorables <- azules*(azules-1)+blancas*(blancas-1)+rojas*(rojas-1)
+  salida <- favorables/totales
+  return(salida)
+  }
+
+prob_b <-function(azules, blancas, rojas) 
+{
+  n_bolsa <- azules+blancas+rojas
+  totales <- n_bolsa*(n_bolsa-1)
+  no_roja<- azules+blancas
+  favorables_comp <- no_roja*(no_roja-1)
+  salida <- 1-favorables_comp/totales
+  return(salida)
+}
+
+
+
+prob_c <-function(azules, blancas, rojas) 
+{
+
+  n_bolsa <- azules+blancas+rojas
+  totales <- n_bolsa*(n_bolsa-1)
+  favorables <- 2*azules*rojas
+  salida <- favorables/totales
+  return(salida)
+}
+
+prob_d <-function(azules, blancas, rojas) 
+{
+  n_bolsa <- azules+blancas+rojas
+  totales <- n_bolsa*(n_bolsa-1)
+  favorables_complemento <- blancas*(blancas-1)
+  salida <- 1- favorables_complemento/totales
+  return(salida)
+}
+
+
+
+
+ui <- fluidPage(
+	titlePanel("Extrayendo bolitas"),
+    	mainPanel(h4("Completa con tu numero de libreta (sin la barra) para se generen tus cantidades de bolitas"),
+		h4("Se extraen 2 bolitas sin reposicion de una bolsa que contiene")),
+	sidebarLayout(
+		mainPanel(verbatimTextOutput("info1"),verbatimTextOutput("info2"),verbatimTextOutput("info3")),
+      	sidebarPanel(numericInput("libreta", "Numero de libreta:", min = 1, max = 100000, value = 24292)),
+		position = c("left", "right")
+	),
+	fluidRow(column(4,
+      pre(includeText("items.txt"))
+    )
+	#fluidRow(column(6,
+      #	h4("Calcular (con al menos 4 decimales) la probabilidad de obtener"),
+	#	h4("las dos bolitas del mismo color."),
+	#	h4("al menos una bolita roja."),
+	#	h4("una bolita azul y una roja."),
+	#	h4("una bolita azul o una roja.")
+    ),
+	fluidRow(column(3,
+	                numericInput("probabilidad_a","Calcule la probabilidad solicitada en a) 
+	                             ", min =0, max =1, value = "?"),
+	                textOutput("verifico_a"))
+	),
+	fluidRow(column(3,
+	                numericInput("probabilidad_b","Calcule la probabilidad solicitada en b) 
+	                             ", min =0, max =1, value = "?"),
+	                textOutput("verifico_b"))
+	),
+	fluidRow(column(3,
+	                numericInput("probabilidad_c","Calcule la probabilidad solicitada en c) 
+	                             ", min =0, max =1, value = "?"),
+	                textOutput("verifico_c"))
+	),
+	fluidRow(column(3,
+	                numericInput("probabilidad_d","Calcule la probabilidad solicitada en d) 
+	                             ", min =0, max =1, value = "?"),
+	                textOutput("verifico_d"))
+	)
+)
+
+server <- function(input,output) {
+
+	datos <- reactive({
+		genero.bolitas(input$libreta)
+	})
+  
+	output$info1 <- renderText({
+		paste(datos()[1],"","bolitas azules,")
+	})	
+	output$info2 <- renderText({
+		paste(datos()[2],"","bolitas blancas,")
+	})
+	output$info3 <- renderText({
+		paste(datos()[3],"","bolitas rojas.")
+	})
+
+	#aca quiero empezar a verificar los resultados
+	output$verifico_a <- renderText({
+	  calculo <- prob_a(datos()[1],datos()[2],datos()[3])
+	  dif <- as.numeric(try(abs(input$probabilidad_a-calculo),TRUE))
+	  if(is.na(dif)){
+	    resp <- "Esperando respuesta"
+	  }else{
+	    if(dif<0.0001){
+	      resp <- " ¡Correcto! "
+	    }else{
+	      resp <- "Inténtelo nuevamente"
+	    }
+	  }
+	  resp
+	})
+	
+	output$verifico_b <- renderText({
+	  calculo <- prob_b(datos()[1],datos()[2],datos()[3])
+	  dif <- as.numeric(try(abs(input$probabilidad_b-calculo),TRUE))
+	  if(is.na(dif)){
+	    resp <- "Esperando respuesta"
+	  }else{
+	    if(dif<0.0001){
+	      resp <- " ¡Correcto! "
+	    }else{
+	      resp <- "Inténtelo nuevamente"
+	    }
+	  }
+	  resp
+	})
+	
+	
+	output$verifico_c <- renderText({
+	  calculo <- prob_c(datos()[1],datos()[2],datos()[3])
+	  dif <- as.numeric(try(abs(input$probabilidad_c-calculo),TRUE))
+	  if(is.na(dif)){
+	    resp <- "Esperando respuesta"
+	  }else{
+	    if(dif<0.0001){
+	      resp <- " ¡Correcto! "
+	    }else{
+	      resp <- "Inténtelo nuevamente"
+	    }
+	  }
+	  resp
+	})
+	
+	
+
+	output$verifico_d <- renderText({
+	  calculo <- prob_d(datos()[1],datos()[2],datos()[3])
+	  dif <- as.numeric(try(abs(input$probabilidad_d-calculo),TRUE))
+	  if(is.na(dif)){
+	    resp <- "Esperando respuesta"
+	  }else{
+	    if(dif<0.0001){
+	      resp <- " ¡Correcto! "
+	    }else{
+	      resp <- "Inténtelo nuevamente"
+	    }
+	  }
+	  resp
+	})
+	
+	
+	
+	
+	} 
+
+shinyApp(ui = ui, server = server)   
+   
+
