@@ -6,6 +6,11 @@ Si encontrás algún error o tenés alguna sugerencia, mandanos un mail a equipo
 
 ## Herramientas
 
+### Regresión Lineal
+
+- [Código]()
+- [App online](https://reda-ar.shinyapps.io/gab-Rendimiento/)
+
 ### Alturas
 
 Generador de datos de alturas para ejercicios de predicción.
