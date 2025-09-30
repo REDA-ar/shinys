@@ -8,7 +8,7 @@ Si encontrás algún error o tenés alguna sugerencia, mandanos un mail a equipo
 
 ### Regresión Lineal
 
-- [Código]()
+- [Código](https://github.com/REDA-ar/shinys/tree/main/regresion_lineal)
 - [App online](https://reda-ar.shinyapps.io/gab-Rendimiento/)
 
 ### Alturas
