@@ -34,7 +34,13 @@ ui <-fluidPage(
   titlePanel("Rendimientos"
   ),
     fluidRow(
-      column(3,
+      column(6,
+      h3("Rendimiento de girasol en el oeste de la provincia de Buenos Aires  (Ejemplo adaptado de Perelman, S. B., Garibaldi, L. A., & Tognetti, P. M. (2019). Experimentación y modelos estadísticos)"), 
+      
+      p(" Se desea ajustar un modelo para predecir el rendimiento del girasol (kg/ha) en el oeste de la provincia de Buenos Aires en base a la cobertura.  Se sabe que la relación entre ambas variables es lineal y directa. 
+        Se realiza un estudio en la localidad de Carlos Casares. Se eligieron 9 valores de cobertura del suelo entre 50 y 90 % y dentro de cada valor se seleccionaron al azar 8 lotes a los que luego se les registró el valor de rendimiento (en kg/ha). Cada estudiante realiza el ensayo y obtiene un conjunto de datos (x, y).
+        Estimar la ordenada al origen, la pendiente y el R2 del modelo ajustado.",style = "font-size: 20px;"),
+             
       numericInput("libreta", "numero de libreta:", min = 1, max = 100000, value = 12906),
       downloadButton("downloadData", "Descargar")
     ),
